@@ -7,7 +7,7 @@
         --tertiaere-font: Arial;
         --fallback-font: sans-serif;
 
-        /* COLORS */
+        /* COLORS HEXA*/
         --primaere: #ffcc00;
         --primaere-light: #fee47d;
         --sekundaere: #272727;
@@ -15,6 +15,15 @@
 
         --dark: #101010;
         --light: #efefef;
+
+        /* COLORS RGB*/
+        --primaere-rgb: 255, 204, 0;
+        --primaere-light-rgb: #fee47d;
+        --sekundaere-rgb: #272727;
+        --sekundaere-light-rgb: #757575;
+
+        --dark-rgb: #101010;
+        --light-rgb: #efefef;
     }
 
     
@@ -33,6 +42,7 @@
         margin: 0;
 
         background-color: var(--sekundaere);
+        color: var(--light);
     }
 
 /* === GENERELLES === */
@@ -49,4 +59,40 @@
 
     .cursor {
         cursor:pointer;
+    }
+
+/* === HEADER === */
+    #header {
+        display: grid;
+        grid-template-columns: 25% 75%;
+        width: 100vw;
+        min-height: 80px;
+        align-items: center;
+        background: var(--dark);
+        position: relative;
+    }
+
+    #header-text-container{
+        padding-bottom: 80px;
+    }
+
+    #header::after {
+        content: "Programmieren lernen ist wie mit einem komplexen Gesellschaftsspiel zu spielen: Man kann die Regeln studieren, doch das wahre Verständnis kommt erst durch das Spielen.";
+        height: 80px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        color: var(--dark);
+        background-color: rgba( var(--primaere-rgb), 0.8);
+        text-align: center;
+        font-style: italic;
+        padding: 0 20px 0 calc(25% + 20px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #header-text-container h1 {
+        font-size: 3rem;
+        margin: 1rem 3rem;
     }
