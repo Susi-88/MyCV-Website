@@ -1,0 +1,52 @@
+/* === VARIABLES === */
+
+    :root {
+        /* FONT */
+        --primaere-font: Arial;
+        --sekundaere-font: Arial;
+        --tertiaere-font: Arial;
+        --fallback-font: sans-serif;
+
+        /* COLORS */
+        --primaere: #ffcc00;
+        --primaere-light: #fee47d;
+        --sekundaere: #272727;
+        --sekundaere-light: #757575;
+
+        --dark: #101010;
+        --light: #efefef;
+    }
+
+    
+/* === GLOBAL === */
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        font-size: 16px;
+    }
+
+    body {
+        font-family: var(--primaere-font, --sekundaere-font, --tertiaere-font, --fallback-font);
+        margin: 0;
+
+        background-color: var(--sekundaere);
+    }
+
+/* === GENERELLES === */
+
+    .clearfix::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    .screenreader {
+        display: none;
+    }
+
+    .cursor {
+        cursor:pointer;
+    }
