@@ -96,3 +96,47 @@
         font-size: 3rem;
         margin: 1rem 3rem;
     }
+
+/* === MAIN === */
+    main {
+        display: grid;
+        grid-template-columns: 25% 75%;
+        width: 100vw;
+    }
+
+    main #nav-container {
+        background: var(--dark);
+        height: 100vh;
+    }
+
+    main #nav-container ul {
+        margin-top: 2rem;
+        padding: 0;
+    }
+
+    main #nav-container ul li {
+        list-style: none;
+        padding: 1rem 2rem;
+        margin-top: 1rem;
+    }
+
+    main #nav-container ul li a{
+        text-decoration: none;
+        cursor: pointer;
+        text-transform: uppercase;
+    }
+
+    main #nav-container ul li a:hover{
+        color: var(--primaere);
+        text-decoration: underline;
+    }
+
+    main #nav-container ul .active{
+        background-color: rgba( var(--primaere-rgb), 0.8);
+    }
+
+    main #nav-container ul li.active a:hover{
+        color: var(--light);
+        text-decoration: none;
+        cursor: default;
+    }
