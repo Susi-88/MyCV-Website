@@ -1,0 +1,451 @@
+/* === VARIABLES === */
+
+    :root {
+        /* FONT */
+        --primaere-font: Arial;
+        --sekundaere-font: Arial;
+        --tertiaere-font: Arial;
+        --fallback-font: sans-serif;
+
+        --title-font: Times;
+
+        /* COLORS HEXA*/
+        --primaere: #ffcc00;
+        --sekundaere: #272727;
+        --sekundaere-light: #757575;
+
+        --dark: #101010;
+        --light: #efefef;
+
+        /* COLORS RGB*/
+        --primaere-rgb: 255, 204, 0;
+        --sekundaere-rgb: #272727;
+        --sekundaere-light-rgb: #757575;
+
+        --dark-rgb: #101010;
+        --light-rgb: #efefef;
+    }
+
+    
+/* === GLOBAL === */
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        font-size: 16px;
+    }
+
+    body {
+        font-family: var(--primaere-font, --sekundaere-font, --tertiaere-font, --fallback-font);
+        margin: 0;
+
+        background-color: var(--sekundaere);
+        color: var(--light);
+        line-height: 1.8;
+    }
+
+    h1,
+    h2 {
+        text-transform: uppercase;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+/* === GENERELLES === */
+
+    .clearfix::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    .screenreader {
+        display: none;
+    }
+
+    .cursor {
+        cursor:pointer;
+    }
+
+/* === HEADER === */
+    #header {
+        background: var(--dark);
+        /*margin-bottom: clamp(5rem, 20rem, 24rem);*/
+    }
+
+    #header .row {
+        height: clamp(12rem, 30vw, 20rem);
+        overflow: hidden;
+    }
+
+    #header-img-container {
+        background-image: url("../img/zsusanna-benkoe-cv-foto.jpg");
+        background-size: cover;
+        background-position: calc(50% + 6px) center;
+    }
+
+    #header-text-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #header-text-name {
+        padding: 0.5rem 1.2rem 0 1.2rem;
+    }
+
+    #header-text-name h1{
+        font-size: clamp(1.2rem, 3vw, 2rem);
+    }
+
+    #header-text-name h2{
+        font-size: clamp(0.8rem, 2.5vw, 1.5rem);
+    }
+
+    #header-text-quote {
+        background: var(--primaere);
+        color: var(--dark);
+        font-size: clamp(0.6rem, 1.8vw, 0.8rem);
+        text-align: center;
+        margin: 0;
+        padding: 0.5rem 1.2rem;
+        display: none;
+    }
+
+
+    @media (min-width: 576px) {
+        #header-text-quote {
+            display: block;
+        }
+    }
+
+    @media (min-width: 768px) {
+        #header-text-name {
+            padding: 1rem 1.2rem 0 2.4rem;
+        }
+    }
+
+    @media (min-width: 992px) {
+        #header-text-quote {
+            padding: 1rem 2.4rem;
+        }
+        #header-text-name {
+        padding: 2.5rem 1.2rem 0 4rem;
+        }
+    }
+
+/* === MAIN === */
+    /* ---- NAV CONTENT ---- */
+    #nav-container-small,
+    #nav-container {
+        background: var(--dark);
+    }
+
+    #nav-container-small ul,
+    #nav-container ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-transform: uppercase;
+        text-align: right;
+        font-weight: bold;
+        font-size: 1rem;
+    }
+
+    #nav-container-small ul>li {
+        padding: 0.3rem;
+        text-align: center;
+    }
+
+    #nav-container ul>li {
+        padding: 0.8rem 1.5rem 0.8rem 0.5rem;
+
+    }
+
+        #nav-container-small>ul>li>a:link,
+        #nav-container>ul>li>a:link,
+        #nav-container-small>ul>li>a:visited,
+        #nav-container>ul>li>a:visited {
+            color: var(--light);
+            text-decoration: none;
+        }
+
+        #nav-container-small>ul>li>a:active,
+        #nav-container>ul>li>a:active {
+            color: var(--primaere);
+            text-decoration: none;
+        }
+
+        #nav-container-small>ul>li>a:hover,
+        #nav-container>ul>li>a:hover {
+            color: var(--primaere);
+            cursor: pointer;
+            text-decoration: underline var(--primaere) 0.2rem;
+            text-underline-offset: 0.4rem;
+        }
+
+        #nav-container-small>ul>li.active>a:link,
+        #nav-container>ul>li.active>a:link,
+        #nav-container-small>ul>li.active>a:visited,
+        #nav-container>ul>li.active>a:visited {
+            color: var(--dark);
+            text-decoration: none;
+        }
+
+        #nav-container-small>ul>li.active>a:active,
+        #nav-container>ul>li.active>a:active {
+            color: var(--dark);
+        }
+
+        #nav-container-small>ul>li.active>a:hover,
+        #nav-container>ul>li.active>a:hover {
+            color: var(--dark);
+            cursor: pointer;
+            text-decoration: underline var(--dark) 0.2rem;
+            text-underline-offset: 0.4rem;
+        }
+
+        #nav-container-small>ul>li.active,
+        #nav-container>ul>li.active {
+            color: var(--dark);
+            background: var(--primaere);
+        }
+
+
+    /* ---- MAIN CONTENT ---- */
+    #main-container {
+        padding: 2.5rem 0 2.5rem 1.2rem;
+    }
+
+
+    @media (min-width: 576px) {
+        #main-container {
+            padding: 2.5rem 0 2.5rem 1.2rem;
+        }
+    }
+
+    @media (min-width: 768px) {
+        #main-container {
+            padding: 2.5rem 0 2.5rem 2.4rem;
+        }
+    }
+
+    @media (min-width: 992px) {
+        #main-container {
+            padding: 2.5rem 0 2.5rem 4rem;
+        }
+    }
+
+    #main-container div:first-of-type h2 {
+        margin-top: 1.4rem;
+    }
+
+    #main-container h2 {
+        position: relative;
+        margin-top: 5rem;
+        width: 100%;
+    }
+
+        #main-container h2::before {
+            content: "";
+            position: absolute;
+            bottom: -0.325rem;
+            left: 0;
+            width: 100%;
+            height: 0.05rem;
+            background: var(--light);
+        }
+
+    #main-container h2 .heading-text {
+        display: inline-block;
+        position: relative;
+    }
+
+        #main-container h2 .heading-text::after {
+            content: "";
+            position: absolute;
+            bottom: -0.4rem;
+            left: 0;
+            width: 100%;
+            height: 0.25rem;
+            background: var(--light);
+        }
+
+    #main-container p {
+        padding: 20px 40px 20px 0;
+    }
+
+    #main-container #professional-skills h3 {
+        font-size: 1.1rem;
+        margin-top: 2.2rem;
+        margin-bottom: 2.2rem;
+        text-align: center;
+        height: 2.2rem;
+        text-decoration: underline var(--primaere) 0.2rem;
+        text-underline-offset: 0.4rem;
+    }
+
+    #main-container #professional-skills ul{
+        list-style: none;
+        padding: 0;
+        text-align: center;
+    }
+
+    @media (min-width: 992px) {
+        #main-container h3 {
+            margin-bottom: 0.8rem;
+        }
+    }
+
+    #main-container #language-skills .language-list {
+        width: fit-content;
+        max-width: calc(100% - 2rem);
+        margin: 3rem auto;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    #main-container #language-skills .language-row {
+        display: grid;
+        grid-template-columns: 7.5rem 6.2rem 1rem auto;
+        align-items: center;
+    }
+
+    #main-container #language-skills .language-level {
+        display: flex;
+        gap: 0.4rem;
+    }
+
+    #main-container #language-skills .square {
+        width: 0.75rem;
+        height: 0.75rem;
+        display: block;
+    }
+
+    #main-container #language-skills .square.filled {
+        background-color: var(--primaere);
+    }
+
+    #main-container #language-skills .square.empty {
+        border: 0.1rem solid var(--primaere);
+    }
+
+    #main-container #language-skills .language-description {
+        white-space: nowrap;
+    }
+
+    #main-container #language-skills .separator {
+        text-align: center;
+    }
+
+    #main-container #language-skills .language-row strong {
+        white-space: nowrap;
+    }
+
+    @media (min-width: 768px) {
+        #main-container #language-skills .language-list {
+            gap: 1.2rem;
+        }
+        #main-container #language-skills .language-row {
+        grid-template-columns: 8rem 6.5rem 2rem auto;
+    }
+        #main-container #language-skills .language-level {
+            gap: 0.7rem;
+        }
+    }
+
+    #main-container #personal-skills .skills {
+        /*position: relative;*/
+        height: 600px;
+        background-color: red;
+    }
+
+    /*#main-container #personal-skills .skill {
+        position: absolute;
+        white-space: nowrap;
+        transform-origin: center;
+        font-size: clamp(1rem, 2vw, 1.5rem);
+    }
+
+    /* Oben links */
+    /*#main-container #personal-skills .skill-1 {
+        top: 50px;
+        left: 5%;
+        transform: rotate(-30deg);
+    }
+
+    /* Oben rechts */
+    /*#main-container #personal-skills .skill-2 {
+        top: 55px;
+        right: 7%;
+        transform: rotate(30deg);
+    }
+
+    /* Mitte */
+    /*#main-container #personal-skills .skill-3 {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transform: rotate(0deg);
+    }
+
+    /* Unten links */
+    /*#main-container #personal-skills .skill-4 {
+        bottom: 45px;
+        left: 12%;
+        transform: rotate(25deg);
+    }
+
+    /* Unten rechts */
+    /*#main-container #personal-skills .skill-5 {
+        bottom: 55px;
+        right: 10%;
+        transform: rotate(-15deg);
+    }
+
+/* --- Berufserfahrung & Bildung --- */
+
+#job-section .job-container,
+#education-section .education-container {
+        position: relative;
+    }
+
+        #job-section  .job-container::after,
+        #education-section .education-container::after {
+            content: "";
+            position: absolute;
+            bottom: -3rem;
+            left: 0;
+            width: 100%;
+            height: 0.05rem;
+            background: var(--light);
+        }
+
+    #job-section div.job-container:first-of-type .job-title,
+    #study-section .study-container:first-of-type .study-title,
+    #education-section .education-container:first-of-type .education-company {
+        margin-top: 3rem;
+    }
+
+    #job-section .job-title,
+    #education-section .education-company,
+    #study-section .study-title {
+        margin-top: 6rem;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    /* --- Zertifikate --- */
+
+
+    /* === FOOTER === */
