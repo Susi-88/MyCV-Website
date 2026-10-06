@@ -449,3 +449,32 @@
 
 
     /* === FOOTER === */
+
+    #footer {
+        background: var(--dark);
+        padding: 2rem 0;
+        text-align: center;
+        border-top: 0.4rem solid var(--primaere);
+    }
+
+    #footer .footer-heading {
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: underline var(--light) 0.2rem;
+        text-underline-offset: 0.4rem;
+        margin: 1rem 0 0.5rem 0;
+    }
+
+    #footer a:link,
+    #footer a:visited,
+    #footer a:active {
+        color: var(--light);
+        text-decoration: none;
+    }
+
+    #footer a:hover{
+        color: var(--primaere);
+        cursor: pointer;
+        text-decoration: underline var(--primaere) 0.2rem;
+        text-underline-offset: 0.4rem;
+    }
