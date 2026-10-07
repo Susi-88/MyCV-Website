@@ -445,6 +445,14 @@
         font-weight: bold;
     }
 
+    #study-section #study-description {
+        margin-top: 2rem;
+    }
+
+    #study-section #study-description ul {
+        margin-top: 0rem;
+    }
+
     /* --- Zertifikate --- */
 
 
