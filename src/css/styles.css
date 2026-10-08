@@ -431,6 +431,13 @@
             background: var(--light);
         }
 
+        #job-section  .job-container:last-of-type::after,
+        #education-section .education-container:last-of-type::after {
+            content: "";
+            position: absolute;
+            height: 0rem;
+        }
+
     #job-section div.job-container:first-of-type .job-title,
     #study-section .study-container:first-of-type .study-title,
     #education-section .education-container:first-of-type .education-company {
@@ -473,16 +480,16 @@
         margin: 1rem 0 0.5rem 0;
     }
 
-    #footer a:link,
-    #footer a:visited,
-    #footer a:active {
-        color: var(--light);
-        text-decoration: none;
-    }
+        #footer a:link,
+        #footer a:visited,
+        #footer a:active {
+            color: var(--light);
+            text-decoration: none;
+        }
 
-    #footer a:hover{
-        color: var(--primaere);
-        cursor: pointer;
-        text-decoration: underline var(--primaere) 0.2rem;
-        text-underline-offset: 0.4rem;
-    }
+        #footer a:hover{
+            color: var(--primaere);
+            cursor: pointer;
+            text-decoration: underline var(--primaere) 0.2rem;
+            text-underline-offset: 0.4rem;
+        }
