@@ -27,6 +27,8 @@
     }
 
     
+
+
 /* === GLOBAL === */
 
     * {
@@ -59,6 +61,8 @@
         font-size: 1.5rem;
     }
 
+
+
 /* === GENERELLES === */
 
     .clearfix::after {
@@ -74,6 +78,8 @@
     .cursor {
         cursor:pointer;
     }
+
+
 
 /* === HEADER === */
     #header {
@@ -142,7 +148,10 @@
         }
     }
 
+
+
 /* === MAIN === */
+
     /* ---- NAV CONTENT ---- */
     #nav-container-small,
     #nav-container {
@@ -413,10 +422,10 @@
         transform: rotate(-15deg);
     }
 
-/* --- Berufserfahrung & Bildung --- */
+    /* --- Berufserfahrung & Bildung --- */
 
-#job-section .job-container,
-#education-section .education-container {
+    #job-section .job-container,
+    #education-section .education-container {
         position: relative;
     }
 
@@ -460,10 +469,122 @@
         margin-top: 0rem;
     }
 
+
     /* --- Zertifikate --- */
+    #certificate-section .certificate-container {
+        width: 90%;
+    }
+
+    #certificate-section .certificate-container-heading {
+        font-size: 1.2rem;
+        text-align: center;
+        margin: 10rem 2rem 2rem 2rem;
+        text-decoration: underline var(--primaere) 0.2rem;
+    }
 
 
-    /* === FOOTER === */
+    /* Position the image container */
+    #certificate-section .certificate-container-slides {
+        position: relative;
+    }
+
+    /* Hide the images by default */
+    #certificate-section .certificate-slides {
+        background-color: var(--light);
+        display: none;
+    }
+
+    #certificate-section .certificate-slides img{
+        width: 60%;
+        display: block;
+        margin: auto;
+    }
+
+    /* Next & previous buttons */
+    #certificate-section .prev,
+    #certificate-section .next {
+        cursor: pointer;
+        position: absolute;
+        top: 35%;
+        width: auto;
+        padding: 0.5rem 1.5rem;
+        margin-top: -50px;
+        color: var(--dark);
+        font-weight: bold;
+        font-size: 2.5rem;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    #certificate-section .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+        /* On hover, add a black background color with a little bit see-through */
+        #certificate-section .prev:hover,
+        #certificate-section .next:hover {
+            color: var(--primaere);
+            background-color: var(--dark);
+        }
+
+    /* Number text (1/3 etc) */
+    #certificate-section .numbertext {
+        color: var(--dark);
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        position: absolute;
+        top: 0;
+    }
+
+    /* Container for image text */
+    #certificate-section .certificate-caption-container {
+        text-align: center;
+        background-color: var(--dark);
+        color: var(--light);
+    }
+
+    #certificate-section .certificate-caption {
+        margin: 0;
+        padding: 1rem;
+    }
+
+    #certificate-section .certificate-row {
+        display: flex;
+        justify-content: center;
+        background-color: var(--dark);
+    }
+
+    #certificate-section .certificate-row img {
+        width: 100%;
+        height: 100%;
+    }
+
+    /*    #certificate-section .certificate-row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }*/
+
+    /* columns side by side */
+    #certificate-section .certificate-column {
+        width: calc(100% / 7);
+    }
+
+    /* Add a transparency effect for thumnbail images */
+    #certificate-section .demo {
+        opacity: 0.6;
+    }
+
+        #certificate-section .active,
+        #certificate-section .demo:hover {
+            opacity: 1;
+        }
+
+
+/* === FOOTER === */
 
     #footer {
         background: var(--dark);
