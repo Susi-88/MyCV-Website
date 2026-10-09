@@ -660,6 +660,8 @@
     /* Position the image container */
     #certificate-section .certificate-container-slides {
         position: relative;
+        padding: 1rem;
+        background-color: var(--dark);
     }
 
     /* Hide the images by default */
@@ -674,6 +676,8 @@
         margin: auto;
     }
 
+    
+
     /* Next & previous buttons */
     #certificate-section .prev,
     #certificate-section .next {
@@ -681,21 +685,22 @@
         position: absolute;
         top: 35%;
         width: auto;
-        padding: 0.5rem 1.5rem;
-        margin-top: -50px;
+        padding: 0.25rem 0.75rem;
+        margin-top: -2rem;
         color: var(--dark);
         font-weight: bold;
-        font-size: 2.5rem;
+        font-size: 1.5rem;
         border-radius: 0 3px 3px 0;
         user-select: none;
         -webkit-user-select: none;
     }
-
+    
     /* Position the "next button" to the right */
     #certificate-section .next {
-        right: 0;
+        right: 1rem;
         border-radius: 3px 0 0 3px;
     }
+    
 
         /* On hover, add a black background color with a little bit see-through */
         #certificate-section .prev:hover,
@@ -704,11 +709,20 @@
             background-color: var(--dark);
         }
 
+        @media (min-width: 992px) {
+            #certificate-section .prev,
+            #certificate-section .next {
+                padding: 0.5rem 1.5rem;
+                font-size: 2.5rem;
+                margin-top: -2.5rem;
+            }
+        }
+
     /* Number text (1/3 etc) */
     #certificate-section .numbertext {
         color: var(--dark);
         font-size: 1rem;
-        padding: 0.5rem 1rem;
+        padding: 1.5rem 1rem;
         position: absolute;
         top: 0;
     }
