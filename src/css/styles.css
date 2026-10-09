@@ -558,6 +558,61 @@
     #study-section #study-description ul {
         margin-top: 0rem;
     }
+    
+    .overlay-study {
+        position: relative;
+    }
+
+        .overlay-study::after {
+            content: "";
+            position: absolute;
+            display: none;
+
+            bottom: 0;
+            right: 0;
+
+            background-image: url("../img/zsusanna-benkoe-cv-foto-3.png");
+            background-size: contain;
+            background-position: right bottom;
+            background-repeat: no-repeat;
+
+            z-index: 999;
+            pointer-events: none;
+        }
+
+            @media (min-width: 768px) {
+                .overlay-study::after {
+                    display: block;
+                    height: 25%;
+                    width: 25%;
+                }
+
+                #education-section #VHB {
+                    padding-right: 10.5rem;
+                }
+            }
+
+            @media (min-width: 992px) {
+                .overlay-study::after {
+                    height: 35%;
+                    width: 35%;
+                }
+            }
+
+            @media (min-width: 1200px) {
+                .overlay-study::after {
+                    height: 40%;
+                    width: 40%;
+                }
+            }
+
+            @media (min-width: 1400px) {
+                .overlay-study::after {
+                    height: 50%;
+                    width: 50%;
+                }
+            }
+
 
 
     /* --- Zertifikate --- */
