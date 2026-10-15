@@ -8,7 +8,8 @@
 
         <!-- FAVICON -->
 
-        <!-- AUTOREN-STYLESHEET -->
+        <!-- AUTHOR'S STYLESHEET -->
+        <!-- Load shared layout and utility styles before site-specific rules. -->
         <link rel="stylesheet" type="text/css" href="./src/css/flexbox.css">
         <link rel="stylesheet" type="text/css" href="./src/css/components.css">
         <link rel="stylesheet" type="text/css" href="./src/css/element-spaces.css">
@@ -18,10 +19,14 @@
     <body>
 
         <!-- === HEADER === -->
+        <!-- Site identity and responsive profile header. -->
         <header id="header" class="container">
                 <div class="row">
-                    <div id="header-img-container" class="col-5 col-sm-4 col-md-3 col-xl-2">
-                    </div>
+
+                    <!-- The header image container for CV foto -->
+                    <div id="header-img-container" class="col-5 col-sm-4 col-md-3 col-xl-2"></div>
+                    
+                    <!-- The header text container for name, title, and quote -->
                     <div id="header-text-container" class="col-7 col-sm-8 col-md-9 col-xl-10">
                         <div id="header-text-name">
                             <h1>Zsuzsanna Benkö</h1>
@@ -32,13 +37,19 @@
                             learn and change."</i> – Carl R. Rogers
                         </p>
                     </div>
+
                 </div>
         </header>
 
         <!-- === MAIN === -->
+        <!-- Main content and navigation. -->
         <main id="main" class="container">
             <div class="row">
+
+                <!-- NAVIGATION -->
+                <!-- The compact and full navigation variants are shown at different breakpoints. -->
                 
+                <!-- SMALL DISPLAY NAVIGATION -->
                 <nav id="nav-container-small" class="display-block display-sm-none col-12">
                     <ul>
                         <li><a href="index.html">über mich</a></li>
@@ -47,6 +58,7 @@
                         <li><a href="zertifikate.html">zertifikate</a></li>
                     </ul>
                 </nav>
+                <!-- FULL DISPLAY NAVIGATION -->
                 <nav id="nav-container" class="display-none display-sm-block col-sm-4 col-md-3 col-xl-2">
                     <ul>
                         <li><a href="index.html">über mich</a></li>
@@ -56,12 +68,16 @@
                     </ul>
                 </nav>
 
-
+                <!-- MAIN CONTENT -->
+                <!-- JOB EXPERIENCE -->
                 <div id="main-container" class="overlay-job col-12 col-sm-8 col-md-9 col-xl-10">
 
                     <div id="job-section">
+                        
                         <h2><span class="heading-text">BERUFSERFAHRUNG</span></h2>
 
+                        <!-- Each entry groups the role, employer, dates, and key responsibilities. -->
+                        <!-- LISTEC GmbH -->
                         <div id="listec" class="job-container">
                             <div class="job-data">
                                 <div class="job-title">Produktmanagerin</div>
@@ -85,6 +101,7 @@
                             </div>
                         </div>
 
+                        <!-- OGL -->
                         <div id="OGL" class="job-container">
                             <div class="job-data">
                                 <div class="job-title">SACHBEARBEITERIN IM IMPORT LOGISTIK</div>
@@ -105,6 +122,7 @@
                             </div>
                         </div>
 
+                        <!-- HARMAN -->
                         <div id="harman" class="job-container">
                             <div class="job-data">
                                 <div class="job-title">FIRMENPRAKTIKANTIN</div>
@@ -129,6 +147,7 @@
         </main>
 
         <!-- === FOOTER === -->
+        <!-- Contact details and external professional profiles. -->
         <footer id="footer">
             <div class="row">
                 <div class="col-12">
