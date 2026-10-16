@@ -49,7 +49,8 @@
     }
 
     h1,
-    h2 {
+    h2,
+    h3 {
         text-transform: uppercase;
     }
 
@@ -565,11 +566,25 @@
     #job-section .job-container,
     #education-section .education-container {
         position: relative;
+    }
+
+    #job-section .job-container,
+    #study-section .study-container,
+    #education-section .education-container {
+        margin-top: 6rem;
+        margin-bottom: 3rem;
         padding-right: 1rem;
+    }
+
+    #job-section .job-container:first-of-type,
+    #study-section .study-container:first-of-type,
+    #education-section .education-container:first-of-type {
+        margin-top: 3rem;
     }
 
         @media (min-width: 576px) {
             #job-section .job-container,
+            #study-section .study-container,
             #education-section .education-container {
                 padding-right: 2rem;
             }
@@ -577,11 +592,13 @@
 
         @media (min-width: 768px) {
             #job-section .job-container,
+            #study-section .study-container,
             #education-section .education-container {
                 padding-right: 3rem;
             }
         }
 
+    /* Add a horizontal line after each entry, except the last one. */
     #job-section .job-container::after,
     #education-section .education-container::after {
         content: "";
@@ -593,13 +610,14 @@
         background: var(--light);
     }
 
+    /* Remove the horizontal line after the last entry. */
     #job-section .job-container:last-of-type::after,
     #education-section .education-container:last-of-type::after {
         content: none;
     }
 
+    /* Reserve the photo's responsive footprint in the final entries. */
         @media (min-width: 768px) {
-            /* Reserve the photo's responsive footprint in the final entries. */
             #job-section #harman {
                 padding-right: calc(25% + 3rem);
             }
@@ -640,18 +658,29 @@
         }
 
     /* --- TITLES --- */
-    #job-section div.job-container:first-of-type .job-title,
-    #study-section .study-container:first-of-type .study-title,
-    #education-section .education-container:first-of-type .education-company {
-        margin-top: 3rem;
+    #job-section .job-container .job-data,
+    #study-section .study-container .study-data,
+    #education-section .education-container .education-data {
+        background-color: rgba(var(--dark-rgb), 0.4);
+        padding: 1rem;
+        border: 1px solid rgba(var(--light-rgb), 0.2);
+        border-radius: 6px;
+
     }
 
-    #job-section .job-title,
-    #education-section .education-company,
-    #study-section .study-title {
-        margin-top: 6rem;
-        text-transform: uppercase;
-        font-weight: bold;
+    #job-section h3,
+    #study-section h3,
+    #education-section h3 {
+        font-size: 1.1rem;
+        margin: 0;
+    }
+
+    #job-section h4,
+    #study-section h4,
+    #education-section h4 {
+        font-size: 1rem;
+        margin: 0;
+        font-weight: normal;
     }
 
     /* --- DESCRIPTIONS --- */
