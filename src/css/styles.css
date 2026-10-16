@@ -688,9 +688,101 @@
         margin-top: 2rem;
     }
 
-    #study-section #study-description ul {
-        margin-top: 0;
+    /* --- STUDY FOCUS--- */
+    #study-section #study-focus {
+        padding: 0;
     }
+
+    #study-section #study-focus h4 {
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin: 2rem auto 3rem auto;
+        position: relative;
+    }
+
+        #study-section #study-focus h4::after {
+            content: "";
+            position: absolute;
+            bottom: -0.2rem;
+            left: 25%;
+            width: 50%;
+            height: 0.2rem;
+            background: linear-gradient(
+                to right,
+                transparent 0%,
+                var(--primaere) 50%,
+                transparent 100%
+            );
+        }
+
+    #study-section #study-focus-tags {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+    }
+
+    #study-section #study-focus-tags div {
+        position: relative;
+        text-align: center;
+        padding: 0.8rem;
+        background-color: rgba(var(--dark-rgb), 0.6);
+        transition: background-color 0.25s ease;
+    }
+
+        /* Top-right corner line */
+        #study-section #study-focus-tags div::before {
+            content: "";
+            position: absolute;
+            top: -0.1rem;
+            right: -0.15rem;
+            width: 100%;
+            height: 100%;
+            border-top: 2px solid transparent;
+            border-right: 2px solid transparent;
+            background:
+                linear-gradient(to left, var(--primaere), transparent 20% ) top / 100% 3px no-repeat,
+                linear-gradient(to bottom, var(--primaere), transparent 70% ) right / 3px 100% no-repeat;
+        }
+
+        /* Bottom-left corner line */
+        #study-section #study-focus-tags div::after {
+            content: "";
+            position: absolute;
+            bottom: -0.1rem;
+            left: -0.15rem;
+            width: 100%;
+            height: 100%;
+            border-bottom: 2px solid transparent;
+            border-left: 2px solid transparent;
+            background:
+                linear-gradient(to right, var(--primaere), transparent 20% ) bottom / 100% 3px no-repeat,
+                linear-gradient(to top, var(--primaere), transparent 70% ) left / 3px 100% no-repeat;
+
+        }
+    
+        /* Hover effect - focus-tags */
+        #study-section #study-focus-tags div:hover {
+            background-color: rgba(var(--dark-rgb), 1);
+        }
+
+        @media (min-width: 768px) {
+            #study-section #study-focus-tags {
+                gap: 2rem;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            #study-section #study-focus-tags {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (min-width: 1400px) {
+            #study-section #study-focus {
+                padding: 0 8rem;
+            }
+        }
     
     
     /* --- CERTIFICATES --- */
