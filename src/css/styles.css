@@ -12,7 +12,7 @@
         /* Brand and surface colors */
         --primaere: #ffcc00;
         --sekundaere: #272727;
-        --sekundaere-light: #757575;
+        --tertiary: #1d1d1d;
 
         --dark: #101010;
         --light: #efefef;
@@ -20,7 +20,7 @@
         /* RGB channels for translucent color variants */
         --primaere-rgb: 255, 204, 0;
         --sekundaere-rgb: 39, 39, 39;
-        --sekundaere-light-rgb: 117, 117, 117;
+        --tertiary-rgb: 29, 29, 29;
         --dark-rgb: 16, 16, 16;
         --light-rgb: 239, 239, 239;
     }
@@ -661,10 +661,18 @@
     #job-section .job-container .job-data,
     #study-section .study-container .study-data,
     #education-section .education-container .education-data {
-        background-color: rgba(var(--dark-rgb), 0.4);
         padding: 1rem;
-        border: 1px solid rgba(var(--light-rgb), 0.2);
-        border-radius: 6px;
+        border-radius: 0.5rem;
+
+        border: 1px solid transparent;
+        background:
+        linear-gradient(var(--tertiary), var(--tertiary)) padding-box,
+        linear-gradient(
+            170deg,
+            var(--dark) 20%,
+            var(--primaere) 70%,
+            var(--dark) 100%
+        ) border-box;
 
     }
 
