@@ -550,7 +550,6 @@
         }
 
         @media (min-width: 1400px) {
-            .overlay-job::after,
             .overlay-study::after {
                 height: 50%;
                 width: 50%;
@@ -561,7 +560,7 @@
             }
     }
 
-    /* --- EXPERIENCE AND EDUCATION --- */
+    /* --- JOB AND EDUCATION --- */
 
     #job-section .job-container,
     #education-section .education-container {
@@ -692,11 +691,48 @@
     }
 
     /* --- DESCRIPTIONS --- */
-    #study-section #study-description {
-        margin-top: 2rem;
+    #job-section .job-description,
+    #study-section #study-description,
+    #education-section .education-description {
+        margin: 2rem 0 2rem 1rem ;
     }
 
-    /* --- STUDY FOCUS--- */
+    #job-section .job-description ul,
+    #education-section .education-description ul {
+        padding: 0;
+        list-style-position: inside;
+    }
+
+    /* --- JOB-CONTAINER - HEADER - h4 --- */
+    #job-section .job-container h4 {
+        margin-top: 0.6rem;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    /* --- JOB - DEVELEOPMENT --- */
+     #job-section .job-development {
+        margin-top: 1.25rem;
+        padding: 1rem 1.25rem;
+        background-color: var(--tertiary);
+        border-left: 3px solid var(--primaere);
+        border-radius: 0.3rem;
+    }
+
+    #job-section .job-development h4 {
+        color: var(--primaere);
+        margin-bottom: 0.6rem;
+    }
+
+     #job-section .job-development p {
+        margin: 0;
+        padding: 0.7rem 0 0 0;
+        color: #dedede;
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    /* --- STUDY - FOCUS--- */
     #study-section #study-focus {
         padding: 0;
     }
@@ -791,6 +827,38 @@
                 padding: 0 8rem;
             }
         }
+
+    /* Button to certificate */
+    .certificate-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        margin: 2rem auto 0;
+
+        padding: 0.5rem 0.9rem;
+
+        color: var(--primaere);
+        background-color: transparent;
+        border: 1px solid var(--primaere);
+        border-radius: 0.5rem;
+
+        font-size: 0.9rem;
+        text-decoration: none;
+
+        transition:
+            color 0.3s ease,
+            background-color 0.3s ease,
+    }
+
+    .certificate-button span {
+        padding-left: 0.5rem;
+    }
+
+    .certificate-button:hover {
+        color: var(--sekundaere);
+        background-color: var(--primaere);
+    }
     
     
     /* --- CERTIFICATES --- */
