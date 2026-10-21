@@ -982,6 +982,167 @@
             opacity: 1;
         }
 
+/* --- TIMELINE --- */
+/* The actual timeline (the vertical ruler) */
+#timeline-container {
+    position: relative;
+    max-width: 100%;
+}
+    /* the middle vertical line of the timeline */
+    #timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: var(--primaere);
+    top: 0;
+    bottom: 0;
+    left: 25px;
+    }
+
+    @media (min-width: 1200px) {
+        #timeline-container {
+            margin: 2rem auto 0 auto;
+            max-width: 90%;
+        }
+    }
+
+/* Container around content */
+.timeline-item {
+    position: relative;
+    background-color: inherit;
+    width: 90%;
+}
+
+    /* The circles on the timeline */
+    .timeline-item::after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        left: -22px;
+        
+        background-color: var(--dark);
+        border: 4px solid var(--primaere);
+        top: 2px;
+        border-radius: 50%;
+        z-index: 1;
+
+        transition: transform 0.3s ease;
+        transform-origin: center;
+    }
+
+    .timeline-item:hover::after {
+        transform: scale(1.8);
+    }
+
+/* Place the container to the right */
+.timeline-right,
+.timeline-left {
+    padding: 10px 0 10px 55px;
+    left: 20px;
+}
+
+    /* Add arrows to the right container (pointing left) */
+    .timeline-left::before,
+    .timeline-right::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        left: 45px;
+        border: medium solid var(--primaere);
+        border-width: 10px 10px 10px 0;
+        border-color: transparent var(--primaere) transparent transparent;
+    }
+
+
+/* The actual content */
+.timeline-content {
+    padding: 12px;
+    position: relative;
+    border-radius: 6px;
+    border: 2px solid transparent;
+}
+
+.timeline-left .timeline-content,
+.timeline-right .timeline-content {
+    background:
+        linear-gradient(rgb(var(--dark-rgb), 1), rgb(var(--dark-rgb), 1)) padding-box,
+        linear-gradient(
+            -150deg,
+            var(--dark) 20%,
+            var(--primaere) 70%,
+            var(--dark) 100%
+    ) border-box;
+}
+
+.timeline-content h4 {
+    margin: 8px;
+    text-align: center;
+}
+
+.timeline-content p {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+    @media (min-width: 992px) {
+        /* the middle vertical line of the timeline */
+        #timeline-container::after {
+            left: 50%;
+        }
+
+        .timeline-item {
+            width: 50%;
+        }
+
+        /* Replace the container to the left */
+        .timeline-left {
+            padding: 10px 55px 10px 0;
+            left: 0;
+            margin-left: 0; 
+        }
+
+        .timeline-right {
+            left: 50%;
+            margin-left: 0; 
+        }
+
+        .timeline-left .timeline-content {
+            background:
+                linear-gradient(rgb(var(--dark-rgb), 1), rgb(var(--dark-rgb), 1)) padding-box,
+                linear-gradient(
+                    150deg,
+                    var(--dark) 20%,
+                    var(--primaere) 70%,
+                    var(--dark) 100%
+            ) border-box;
+        }
+
+            /* Add arrows to the left container (pointing right) */
+            .timeline-left::before {
+                left: auto;
+                right: 45px;
+                border: medium solid var(--primaere);
+                border-width: 10px 0 10px 10px;
+                border-color: transparent transparent transparent var(--primaere);
+            }
+
+            /* Fix the circle for containers on the left side */
+            .timeline-left::after {
+                left: auto;
+                right: -31px;
+            }
+
+            /* Fix the circle for containers on the right side */
+            .timeline-right::after {
+                left: -27px;
+            }
+    }
+
 
 /* === FOOTER === */
 
