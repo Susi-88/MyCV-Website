@@ -541,20 +541,7 @@
             }
         }
 
-        @media (min-width: 1200px) {
-            .overlay-job::after,
-            .overlay-study::after {
-                height: 40%;
-                width: 40%;
-            }
-        }
-
         @media (min-width: 1400px) {
-            .overlay-study::after {
-                height: 50%;
-                width: 50%;
-            }
-
             .overlay-job::after {
                 right: 3rem;
             }
@@ -703,33 +690,40 @@
         list-style-position: inside;
     }
 
-    /* --- JOB-CONTAINER - HEADER - h4 --- */
-    #job-section .job-container h4 {
-        margin-top: 0.6rem;
-        font-size: 1rem;
-        font-weight: 600;
-    }
-
-    /* --- JOB - DEVELEOPMENT --- */
-     #job-section .job-development {
+    /* --- DEVELEOPMENT --- */
+     #job-section .job-development,
+     #study-section .study-development,
+     #education-section .education-development {
         margin-top: 1.25rem;
+        margin-bottom: 1.25rem;
         padding: 1rem 1.25rem;
         background-color: var(--tertiary);
         border-left: 0.25rem solid var(--primaere);
         border-radius: 0.3rem;
     }
 
-    #job-section .job-development h4 {
+    #job-section .job-development h4,
+     #study-section .study-development h4,
+     #education-section .education-development h4 {
         color: var(--primaere);
         margin-bottom: 0.6rem;
     }
 
-     #job-section .job-development p {
+    #job-section .job-development p,
+     #study-section .study-development p,
+     #education-section .education-development p {
         margin: 0;
         padding: 0.7rem 0 0 0;
         color: #dedede;
         font-size: 0.9rem;
         line-height: 1.7;
+    }
+
+    /* --- JOB-CONTAINER - HEADER - h4 --- */
+    #job-section .job-container h4 {
+        margin-top: 0.6rem;
+        font-size: 1rem;
+        font-weight: 600;
     }
 
     /* --- STUDY - FOCUS--- */
