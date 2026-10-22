@@ -62,7 +62,7 @@
         font-size: 1.5rem;
     }
 
-    .btn-primaere {
+    .primaere-btn {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -80,12 +80,12 @@
             background-color 0.3s ease,
     }
 
-        .btn-primaere:hover {
+        .primaere-btn:hover {
             color: var(--sekundaere);
             background-color: var(--primaere);
         }
 
-    .btn-primaere span {
+    .primaere-btn span {
         padding-left: 0.5rem;
     }
 
@@ -934,13 +934,24 @@
         }
 
 /* --- TIMELINE --- */
+#timeline-section .timeline-intro{
+    margin: 3rem 1rem 3rem 0;
+    text-align: justify;
+}
+
+    @media (min-width: 992px) {
+        #timeline-section .timeline-intro {
+            margin: 3rem 3rem 3rem 0;
+        }
+    }
+
 /* The actual timeline (the vertical ruler) */
-#timeline-container {
+#timeline-section #timeline-container {
     position: relative;
     max-width: 100%;
 }
     /* the middle vertical line of the timeline */
-    #timeline-container::after {
+    #timeline-section #timeline-container::after {
     content: '';
     position: absolute;
     width: 6px;
@@ -950,22 +961,22 @@
     left: 25px;
     }
 
-    @media (min-width: 1200px) {
-        #timeline-container {
+    @media (min-width: 992px) {
+        #timeline-section #timeline-container {
             margin: 2rem auto 0 auto;
             max-width: 90%;
         }
     }
 
 /* Container around content */
-.timeline-item {
+#timeline-section .timeline-item {
     position: relative;
     background-color: inherit;
     width: 90%;
 }
 
     /* The circles on the timeline */
-    .timeline-item::after {
+    #timeline-section .timeline-item::after {
         content: '';
         position: absolute;
         width: 50px;
@@ -973,6 +984,9 @@
         left: -22px;
         
         background-color: var(--dark);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         border: 4px solid var(--primaere);
         top: 2px;
         border-radius: 50%;
@@ -982,20 +996,42 @@
         transform-origin: center;
     }
 
-    .timeline-item:hover::after {
+    #timeline-section .timeline-listec::after {
+        background-image: url(../img/timeline/listec.jpg);
+    }
+
+    #timeline-section .timeline-ogl::after {
+        background-image: url(../img/timeline/ogl.jpg);
+    }
+
+    #timeline-section .timeline-harman::after {
+        background-image: url(../img/timeline/harman.jpg);
+    }
+
+    #timeline-section .timeline-studium::after {
+        background-image: url(../img/timeline/studium.jpg);
+    }
+
+    #timeline-section .timeline-item:hover::after {
         transform: scale(1.8);
     }
 
+        @media (min-width: 1200px) {
+            #timeline-section .timeline-item:hover::after {
+                transform: scale(2.4);
+            }
+        }
+
 /* Place the container to the right */
-.timeline-right,
-.timeline-left {
+#timeline-section .timeline-right,
+#timeline-section .timeline-left {
     padding: 10px 0 10px 55px;
     left: 20px;
 }
 
     /* Add arrows to the right container (pointing left) */
-    .timeline-left::before,
-    .timeline-right::before {
+    #timeline-section .timeline-left::before,
+    #timeline-section .timeline-right::before {
         content: " ";
         height: 0;
         position: absolute;
@@ -1010,15 +1046,15 @@
 
 
 /* The actual content */
-.timeline-content {
+#timeline-section .timeline-content {
     padding: 12px;
     position: relative;
     border-radius: 6px;
     border: 2px solid transparent;
 }
 
-.timeline-left .timeline-content,
-.timeline-right .timeline-content {
+#timeline-section .timeline-left .timeline-content,
+#timeline-section .timeline-right .timeline-content {
     background:
         linear-gradient(rgb(var(--dark-rgb), 1), rgb(var(--dark-rgb), 1)) padding-box,
         linear-gradient(
@@ -1029,40 +1065,58 @@
     ) border-box;
 }
 
-.timeline-content h4 {
-    margin: 8px;
-    text-align: center;
-}
-
-.timeline-content p {
+#timeline-section .timeline-content p {
     padding: 0;
     margin: 0;
     text-align: center;
 }
 
+#timeline-section .timeline-content .timeline-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+#timeline-section .timeline-content .timeline-date,
+#timeline-section .timeline-content .timeline-separator,
+#timeline-section .timeline-content .timeline-provider {
+    font-size: 0.8rem;
+}
+
+#timeline-section .timeline-content .timeline-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0.5rem auto;
+}
+
+#timeline-section .timeline-content .timeline-description {
+    font-size: 0.9rem;
+}
+
     @media (min-width: 992px) {
         /* the middle vertical line of the timeline */
-        #timeline-container::after {
+        #timeline-section #timeline-container::after {
             left: 50%;
         }
 
-        .timeline-item {
+        #timeline-section .timeline-item {
             width: 50%;
         }
 
         /* Replace the container to the left */
-        .timeline-left {
+        #timeline-section .timeline-left {
             padding: 10px 55px 10px 0;
             left: 0;
             margin-left: 0; 
         }
 
-        .timeline-right {
+        #timeline-section .timeline-right {
             left: 50%;
             margin-left: 0; 
         }
 
-        .timeline-left .timeline-content {
+        #timeline-section .timeline-left .timeline-content {
             background:
                 linear-gradient(rgb(var(--dark-rgb), 1), rgb(var(--dark-rgb), 1)) padding-box,
                 linear-gradient(
@@ -1074,7 +1128,7 @@
         }
 
             /* Add arrows to the left container (pointing right) */
-            .timeline-left::before {
+            #timeline-section .timeline-left::before {
                 left: auto;
                 right: 45px;
                 border: medium solid var(--primaere);
@@ -1083,15 +1137,19 @@
             }
 
             /* Fix the circle for containers on the left side */
-            .timeline-left::after {
+            #timeline-section .timeline-left::after {
                 left: auto;
                 right: -31px;
             }
 
             /* Fix the circle for containers on the right side */
-            .timeline-right::after {
+            #timeline-section .timeline-right::after {
                 left: -27px;
             }
+    }
+
+    #timeline-section .timeline-btn {
+        margin: 1rem auto 0;
     }
 
 
