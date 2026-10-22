@@ -62,7 +62,32 @@
         font-size: 1.5rem;
     }
 
+    .btn-primaere {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
 
+        color: var(--primaere);
+        background-color: transparent;
+
+        font-size: 0.9rem;
+        text-decoration: none;
+        padding: 0.5rem 0.9rem;
+
+        transition:
+            color 0.3s ease,
+            background-color 0.3s ease,
+    }
+
+        .btn-primaere:hover {
+            color: var(--sekundaere);
+            background-color: var(--primaere);
+        }
+
+    .btn-primaere span {
+        padding-left: 0.5rem;
+    }
 
 
 
@@ -779,37 +804,13 @@
         }
 
     /* Button to certificate */
-    .certificate-button {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: fit-content;
+    #study-section .certificate-btn,
+    #education-section .certificate-btn {
         margin: 2rem auto 0;
 
-        padding: 0.5rem 0.9rem;
-
-        color: var(--primaere);
-        background-color: transparent;
         border: 1px solid var(--primaere);
         border-radius: 0.5rem;
-
-        font-size: 0.9rem;
-        text-decoration: none;
-
-        transition:
-            color 0.3s ease,
-            background-color 0.3s ease,
     }
-
-    .certificate-button span {
-        padding-left: 0.5rem;
-    }
-
-    .certificate-button:hover {
-        color: var(--sekundaere);
-        background-color: var(--primaere);
-    }
-    
     
     /* --- CERTIFICATES --- */
     #certificate-section .certificate-container {
