@@ -996,8 +996,36 @@
         transform-origin: center;
     }
 
+    #timeline-section .timeline-power-bi::after {
+        background-image: url(../img/timeline/power_bi.jpg);
+    }
+
+    #timeline-section .timeline-adobe::after {
+        background-image: url(../img/timeline/adobe.jpg);
+    }
+
+    #timeline-section .timeline-web-design::after {
+        background-image: url(../img/timeline/web_design.jpg);
+    }
+
+    #timeline-section .timeline-git::after {
+        background-image: url(../img/timeline/git.jpg);
+    }
+
+    #timeline-section .timeline-html-css::after {
+        background-image: url(../img/timeline/html_css.jpg);
+    }
+
+    #timeline-section .timeline-vba::after {
+        background-image: url(../img/timeline/vba.jpg);
+    }
+
     #timeline-section .timeline-listec::after {
         background-image: url(../img/timeline/listec.jpg);
+    }
+
+    #timeline-section .timeline-sql::after {
+        background-image: url(../img/timeline/sql.jpg);
     }
 
     #timeline-section .timeline-ogl::after {
