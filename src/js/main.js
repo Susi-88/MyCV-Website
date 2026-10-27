@@ -1,3 +1,47 @@
+/* === FOOTER SIDEBAR TRANSITION === */
+const sidebarHeader = document.getElementById("header-img-container");
+const sidebarNav = document.getElementById("nav-container");
+const footer = document.getElementById("footer");
+
+if (sidebarHeader && sidebarNav && footer) {
+    const desktopSidebar = window.matchMedia("(min-width: 576px)");
+    let updateScheduled = false;
+
+    const updateSidebarPosition = () => {
+        updateScheduled = false;
+
+        if (!desktopSidebar.matches) {
+            sidebarHeader.style.transform = "";
+            sidebarNav.style.transform = "";
+            return;
+        }
+
+        const footerTop = footer.getBoundingClientRect().top;
+        const visibleFooterHeight = Math.min(
+            window.innerHeight,
+            Math.max(0, window.innerHeight - footerTop)
+        );
+        const transform = visibleFooterHeight > 0
+            ? `translateY(-${visibleFooterHeight}px)`
+            : "";
+
+        sidebarHeader.style.transform = transform;
+        sidebarNav.style.transform = transform;
+    };
+
+    const scheduleSidebarUpdate = () => {
+        if (!updateScheduled) {
+            updateScheduled = true;
+            window.requestAnimationFrame(updateSidebarPosition);
+        }
+    };
+
+    window.addEventListener("scroll", scheduleSidebarUpdate, { passive: true });
+    window.addEventListener("resize", scheduleSidebarUpdate);
+    updateSidebarPosition();
+}
+
+
 /* === EDUCATION TOGGEL === */
 // Select all education toggle buttons
 document.querySelectorAll(".education-toggle").forEach(button => {
