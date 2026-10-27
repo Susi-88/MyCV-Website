@@ -21,8 +21,8 @@ if (sidebarHeader && sidebarNav && footer) {
             window.innerHeight,
             Math.max(0, window.innerHeight - footerTop)
         );
-        const transform = visibleFooterHeight > 0
-            ? `translateY(-${visibleFooterHeight}px)`
+        const transform = visibleFooterHeight > 200
+            ? `translateY(-${visibleFooterHeight - 200}px)`
             : "";
 
         sidebarHeader.style.transform = transform;
