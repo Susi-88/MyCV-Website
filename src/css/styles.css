@@ -59,7 +59,7 @@
     }
 
     h2 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 
     .primaere-btn {
@@ -346,7 +346,7 @@
 
     #main-container h2 {
         position: relative;
-        margin-top: 5rem;
+        margin-top: 10rem;
         width: 100%;
     }
 
@@ -614,7 +614,7 @@
     #education-section .education-container::after {
         content: "";
         position: absolute;
-        bottom: -3rem;
+        bottom: -5rem;
         left: 0;
         width: 100%;
         height: 0.05rem;
@@ -690,7 +690,7 @@
     #job-section h3,
     #study-section h3,
     #education-section h3 {
-        font-size: 1.1rem;
+        font-size: 1.4rem;
         margin: 0;
     }
 
@@ -716,9 +716,9 @@
     }
 
     /* --- DEVELEOPMENT --- */
-     #job-section .job-development,
-     #study-section .study-development,
-     #education-section .education-development {
+    #job-section .job-development,
+    #study-section .study-development,
+    #education-section .education-development {
         margin-top: 1.25rem;
         margin-bottom: 1.25rem;
         padding: 1rem 1.25rem;
@@ -728,22 +728,115 @@
     }
 
     #job-section .job-development h4,
-     #study-section .study-development h4,
-     #education-section .education-development h4 {
+    #study-section .study-development h4,
+    #education-section .education-development h4 {
         color: var(--primaere);
         margin-bottom: 0.6rem;
     }
 
     #job-section .job-development p,
-     #study-section .study-development p,
-     #education-section .education-development p {
+    #study-section .study-development p,
+    #education-section .education-development p {
         margin: 0;
         padding: 0.7rem 0 0 0;
         color: #dedede;
         font-size: 0.9rem;
         line-height: 1.7;
+        text-align: justify;
     }
 
+    /* --- EDUCATION CATEGORY --- */
+
+    #education-section .education-category {
+        background-color: rgba( var(--tertiary-rgb), 0.6);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin: 2rem 1rem 2rem 0;
+    }
+
+    #education-section .education-category:last-of-type {
+        margin-bottom: 5rem;
+    }
+
+    #education-section .education-category-header {
+        font-size: 1.1rem;
+        margin: 1rem 0;
+        min-height: 2.2rem;
+        font-weight: bold;
+        text-decoration: underline var(--light) 0.1rem;
+        text-underline-offset: 0.4rem;
+    }
+
+    #education-section #udemy .education-development {
+        background-color: var(--dark);
+        margin: 1rem;
+        border-left: 0.25rem solid var(--primaere);
+        border-radius: 0.3rem;
+    }
+
+    /* --- TOGGEL --- */
+    #education-section .education-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        width: 100%;
+        padding: 0.5rem 0;
+        border: none;
+        background: none;
+        color: inherit;
+        text-align: left;
+        font: inherit;
+        cursor: pointer;
+    }
+
+    #education-section .education-toggle:hover {
+        color: var(--primaere);
+    }
+
+    /* Keep the arrow in a fixed-size container */
+    .toggle-arrow {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+        flex-shrink: 0;
+    }
+
+    /* Create the arrow using CSS */
+    .toggle-arrow::after {
+        content: "";
+        width: 0.75rem;
+        height: 0.75rem;
+        border-right: 0.2rem solid currentColor;
+        border-bottom: 0.2rem solid currentColor;
+        transform-origin: center;
+        transition: transform 0.3s ease;
+    }
+
+        /* Arrow points down */
+        .toggle-arrow-down::after {
+            transform: translateY(-0.1rem) rotate(45deg);
+            margin-top: -0.5rem;
+        }
+
+        /* Arrow points up */
+        .toggle-arrow-up::after {
+            transform: translateY(0.1rem) rotate(225deg);
+            margin-top: 0.5rem;
+        }
+
+        @media (min-width: 992px) {
+            #education-section #udemy .education-description > div:nth-of-type(n+3) .education {
+                width: 75%;
+            }
+
+            #education-section .education-toggle {
+                justify-content: flex-start;
+            }
+        }
+        
     /* --- JOB-CONTAINER - HEADER - h4 --- */
     #job-section .job-container h4 {
         margin-top: 0.6rem;
@@ -754,6 +847,7 @@
     /* --- STUDY - FOCUS--- */
     #study-section #study-focus {
         padding: 0;
+        margin-bottom: 3rem;
     }
 
     #study-section #study-focus h4 {
@@ -806,10 +900,14 @@
     /* Button to certificate */
     #study-section .certificate-btn,
     #education-section .certificate-btn {
-        margin: 2rem auto 0;
+        margin: 3rem auto 10rem;
 
         border: 1px solid var(--primaere);
         border-radius: 0.5rem;
+    }
+
+    #education-section #VHB .certificate-btn {
+        margin: 2rem auto 0;
     }
     
     /* --- CERTIFICATES --- */
