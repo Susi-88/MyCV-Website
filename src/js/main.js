@@ -261,8 +261,58 @@ const carouselContainers = Array.from(
 );
 const slideIndex = carouselContainers.map(() => 1);
 
-carouselContainers.forEach((_, slideshowIndex) => {
+carouselContainers.forEach((slideshow, slideshowIndex) => {
     showSlides(1, slideshowIndex);
+
+    let swipeStart = null;
+    let suppressClickUntil = 0;
+
+    // Track touch swipes without interfering with normal vertical page scrolling.
+    slideshow.addEventListener("pointerdown", event => {
+        if (event.pointerType !== "touch") {
+            return;
+        }
+
+        swipeStart = {
+            pointerId: event.pointerId,
+            x: event.clientX,
+            y: event.clientY
+        };
+    });
+
+    slideshow.addEventListener("pointerup", event => {
+        if (!swipeStart || event.pointerId !== swipeStart.pointerId) {
+            return;
+        }
+
+        const distanceX = event.clientX - swipeStart.x;
+        const distanceY = event.clientY - swipeStart.y;
+        swipeStart = null;
+
+        // Ignore short or mostly vertical movements so they remain ordinary taps/scrolls.
+        if (Math.abs(distanceX) < 40 || Math.abs(distanceX) < Math.abs(distanceY) * 1.25) {
+            return;
+        }
+
+        // A left swipe advances; a right swipe returns to the previous certificate.
+        plusSlides(distanceX < 0 ? 1 : -1, slideshowIndex);
+        suppressClickUntil = Date.now() + 100;
+    });
+
+    slideshow.addEventListener("pointercancel", () => {
+        swipeStart = null;
+    });
+
+    // Prevent a swipe from also activating a thumbnail or carousel arrow.
+    slideshow.addEventListener("click", event => {
+        if (Date.now() > suppressClickUntil) {
+            return;
+        }
+
+        suppressClickUntil = 0;
+        event.preventDefault();
+        event.stopPropagation();
+    }, true);
 });
 
 // Next / previous controls.

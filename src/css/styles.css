@@ -1160,6 +1160,7 @@
         position: relative;
         padding: 1rem;
         background-color: var(--dark);
+        touch-action: pan-y pinch-zoom;
     }
 
     /* Hide the images by default */
