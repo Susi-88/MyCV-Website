@@ -427,6 +427,17 @@
             }
         }
 
+    #main-container .intro{
+    margin: 3rem 1rem 3rem 0;
+    text-align: justify;
+}
+
+    @media (min-width: 992px) {
+        #main-container .intro {
+            margin: 2rem 3rem 3rem 0;
+        }
+    }
+
     #main-container div:first-of-type h2 {
         margin-top: 2rem;
     }
@@ -468,6 +479,7 @@
 
     #main-container p {
         padding: 1.25rem 2.5rem 1.25rem 0;
+        text-align: justify;
     }
 
 
@@ -720,14 +732,6 @@
             }
         }
 
-        @media (min-width: 992px) {
-            .overlay-job::after,
-            .overlay-study::after {
-                height: 35%;
-                width: 35%;
-            }
-        }
-
         @media (min-width: 1400px) {
             .overlay-job::after {
                 right: 3rem;
@@ -792,41 +796,11 @@
     /* Reserve the photo's responsive footprint in the final entries. */
         @media (min-width: 768px) {
             #job-section #harman {
-                padding-right: calc(25% + 3rem);
+                padding-right: calc(26% + 3rem);
             }
 
             #education-section #VHB {
                 padding-right: calc(25% + 3rem);
-            }
-        }
-
-        @media (min-width: 992px) {
-            #job-section #harman {
-                padding-right: calc(35% + 3rem);
-            }
-
-            #education-section #VHB {
-                padding-right: calc(35% + 3rem);
-            }
-        }
-
-        @media (min-width: 1200px) {
-            #job-section #harman {
-                padding-right: calc(40% + 3rem);
-            }
-
-            #education-section #VHB {
-                padding-right: calc(40% + 3rem);
-            }
-        }
-
-        @media (min-width: 1400px) {
-            #job-section #harman {
-                padding-right: calc(50% + 3rem);
-            }
-
-            #education-section #VHB {
-                padding-right: calc(50% + 3rem);
             }
         }
 
@@ -905,10 +879,8 @@
     #education-section .education-development p {
         margin: 0;
         padding: 0.7rem 0 0 0;
-        color: #dedede;
         font-size: 0.9rem;
         line-height: 1.7;
-        text-align: justify;
     }
 
     /* --- EDUCATION CATEGORY --- */
@@ -940,7 +912,7 @@
         border-radius: 0.3rem;
     }
 
-    /* --- TOGGEL --- */
+    /* --- TOGGLE --- */
     #education-section .education-toggle {
         display: flex;
         align-items: center;
@@ -994,8 +966,8 @@
         }
 
         @media (min-width: 992px) {
-            #education-section #udemy .education-description > div:nth-of-type(n+3) .education {
-                width: 75%;
+            #education-section #udemy .education-description > div:last-of-type .education {
+                width: 85%;
             }
 
             #education-section .education-toggle {
@@ -1094,7 +1066,7 @@
     #certificate-section .certificate-container-heading {
         font-size: 1.2rem;
         text-align: center;
-        margin: 10rem 2rem 2rem 2rem;
+        margin: 6rem 2rem 2rem 2rem;
         text-decoration: underline var(--primaere) 0.2rem;
     }
 
@@ -1170,7 +1142,6 @@
 
     /* Container for image text */
     #certificate-section .certificate-caption-container {
-        text-align: center;
         background-color: var(--dark);
         color: var(--light);
     }
@@ -1178,6 +1149,7 @@
     #certificate-section .certificate-caption {
         margin: 0;
         padding: 1rem;
+        text-align: center;
     }
 
     #certificate-section .certificate-row {
@@ -1197,7 +1169,7 @@
         width: calc(100% / 7);
     }
 
-    /* Add a transparency effect for thumnbail images */
+    /* Add a transparency effect for thumbnail images. */
     #certificate-section .demo {
         opacity: 0.6;
     }
@@ -1208,16 +1180,6 @@
         }
 
 /* --- TIMELINE --- */
-#timeline-section .timeline-intro{
-    margin: 3rem 1rem 3rem 0;
-    text-align: justify;
-}
-
-    @media (min-width: 992px) {
-        #timeline-section .timeline-intro {
-            margin: 3rem 3rem 3rem 0;
-        }
-    }
 
 /* The actual timeline (the vertical ruler) */
 #timeline-section #timeline-container {

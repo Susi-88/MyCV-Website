@@ -4,7 +4,7 @@
 This repository contains my personal CV website, created to present my professional background, skills, education, certifications, and experience in a modern and interactive format.
 
 ## About
-am a Product Manager with a background in International Business Economics and a strong interest in digitalization, data analysis, process optimization, and technology.
+I am a Product Manager with a background in International Business Economics and a strong interest in digitalization, data analysis, process optimization, and technology.
 In my professional work, I combine product management and technical documentation with digital tools such as Microsoft Power BI, SQL, VBA, and Microsoft Office. I continuously expand my technical skills in areas such as web development, automation, and data analysis.
 
 ## Website

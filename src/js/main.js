@@ -176,45 +176,46 @@ if (sidebarHeader && sidebarNav && footer) {
 }
 
 
-/* === EDUCATION TOGGEL === */
-// Select all education toggle buttons
+/* === EDUCATION TOGGLE === */
+// Toggle each educational detail panel and keep only one panel open at a time.
 document.querySelectorAll(".education-toggle").forEach(button => {
     button.addEventListener("click", () => {
-
-        // Find the parent education container
         const education = button.closest(".education");
 
-        // Find the description and arrow within this container
+        if (!education) {
+            return;
+        }
+
         const development = education.querySelector(".education-development");
         const arrow = button.querySelector(".toggle-arrow");
 
-        // Check whether the description is currently hidden
+        if (!development || !arrow) {
+            return;
+        }
+
+        // Keep the accordion predictable by collapsing any open siblings first.
         const isHidden = development.classList.contains("display-none");
-
-        // Close all other open descriptions
         document.querySelectorAll(".education").forEach(item => {
-            if (item !== education) {
-                const otherDevelopment = item.querySelector(".education-development");
-                const otherArrow = item.querySelector(".toggle-arrow");
+            if (item === education) {
+                return;
+            }
 
-                // Hide the description if it exists
-                if (otherDevelopment) {
-                    otherDevelopment.classList.remove("display-block");
-                    otherDevelopment.classList.add("display-none");
-                }
+            const otherDevelopment = item.querySelector(".education-development");
+            const otherArrow = item.querySelector(".toggle-arrow");
+            const otherHeader = item.querySelector(".education-toggle");
 
-                // Reset the arrow if it exists
-                if (otherArrow) {
-                    otherArrow.classList.remove("toggle-arrow-up");
-                    otherArrow.classList.add("toggle-arrow-down");
-                }
+            if (otherDevelopment) {
+                otherDevelopment.classList.remove("display-block");
+                otherDevelopment.classList.add("display-none");
+            }
 
-                // Reset the header color if it exists
-                const otherHeader = item.querySelector(".education-toggle");
-                if (otherHeader) {
-                    otherHeader.style.color = "";
-                }
+            if (otherArrow) {
+                otherArrow.classList.remove("toggle-arrow-up");
+                otherArrow.classList.add("toggle-arrow-down");
+            }
 
+            if (otherHeader) {
+                otherHeader.style.color = "";
             }
         });
 
@@ -251,59 +252,51 @@ document.querySelectorAll(".education-toggle").forEach(button => {
 });
 
 
-
 /* === CERTIFICATE CAROUSEL === */
 /* Controls the independent certificate carousels on the certificates page. */
 
-// Store the current slide separately for each carousel.
-let slideIndex = [1, 1, 1, 1];
+// Store the current slide index for each carousel instance.
+const carouselContainers = Array.from(
+    document.querySelectorAll(".certificate-container-slides")
+);
+const slideIndex = carouselContainers.map(() => 1);
 
-showSlides(1, 0);
-showSlides(1, 1);
-showSlides(1, 2);
-showSlides(1, 3);
+carouselContainers.forEach((_, slideshowIndex) => {
+    showSlides(1, slideshowIndex);
+});
 
+// Next / previous controls.
+function plusSlides(step, slideshowIndex) {
+    const validIndex = Number.isInteger(slideshowIndex)
+        ? slideshowIndex
+        : 0;
 
-// Next / previous controls
-// Move the selected carousel forward or backward.
-function plusSlides(n, slideshowIndex) {
-    showSlides(
-        slideIndex[slideshowIndex] += n,
-        slideshowIndex
-    );
+    showSlides(slideIndex[validIndex] += step, validIndex);
 }
 
+// Thumbnail controls.
+function currentSlide(slideNumber, slideshowIndex) {
+    const validIndex = Number.isInteger(slideshowIndex)
+        ? slideshowIndex
+        : 0;
 
-// Thumbnail controls
-// Display the slide selected by a thumbnail.
-function currentSlide(n, slideshowIndex) {
-    showSlides(
-        slideIndex[slideshowIndex] = n,
-        slideshowIndex
-    );
+    showSlides(slideIndex[validIndex] = slideNumber, validIndex);
 }
-
 
 function showSlides(n, slideshowIndex) {
+    const slideshow = carouselContainers[slideshowIndex];
 
-    let i;
+    if (!slideshow) {
+        return;
+    }
 
-    // Resolve slide elements only within the requested carousel.
-    let slideshow = document.getElementsByClassName(
-        "certificate-container-slides"
-    )[slideshowIndex];
+    const slides = slideshow.getElementsByClassName("certificate-slides");
+    const dots = slideshow.getElementsByClassName("demo");
+    const captionText = slideshow.getElementsByClassName("certificate-caption")[0];
 
-    let slides = slideshow.getElementsByClassName(
-        "certificate-slides"
-    );
-
-    let dots = slideshow.getElementsByClassName(
-        "demo"
-    );
-
-    let captionText = slideshow.getElementsByClassName(
-        "certificate-caption"
-    )[0];
+    if (!slides.length || !dots.length || !captionText) {
+        return;
+    }
 
     // Wrap navigation at either end of the slide list.
     if (n > slides.length) {
@@ -315,24 +308,19 @@ function showSlides(n, slideshowIndex) {
     }
 
     // Hide every slide before displaying the selected one.
-    for (i = 0; i < slides.length; i++) {
+    for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
     }
 
     // Clear the active state from all thumbnails in this carousel.
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(
-            " active",
-            ""
-        );
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
     }
 
     // Show the selected slide and mark its matching thumbnail as active.
     slides[slideIndex[slideshowIndex] - 1].style.display = "block";
-
     dots[slideIndex[slideshowIndex] - 1].className += " active";
 
     // Use the selected thumbnail's alternative text as the visible caption.
-    captionText.innerHTML =
-        dots[slideIndex[slideshowIndex] - 1].getAttribute("alt");
+    captionText.innerHTML = dots[slideIndex[slideshowIndex] - 1].getAttribute("alt");
 }
