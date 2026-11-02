@@ -162,7 +162,7 @@
     }
 
     #header-img-container {
-        background-image: url("../img/zsusanna-benkoe-cv-foto.jpg");
+        background-image: url("../img/zsusanna-benkoe-cv-foto-header.jpg");
         background-size: cover;
         background-position: calc(50% + 0.375rem) center;
     }
@@ -1086,7 +1086,8 @@
     }
 
     #certificate-section .certificate-slides img{
-        width: 60%;
+        width: min(100%, 40rem);
+        height: auto;
         display: block;
         margin: auto;
     }
