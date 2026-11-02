@@ -22,6 +22,9 @@ The website provides an overview of:
 - **CSS:** Used for styling and layout of the website.
 - **JavaScript:** Used minimally for interactive elements.
 
+## Language versions
+The German pages are in the repository root, and their English counterparts are in `en/`. The header language switch links to the equivalent page in the other language. Keep each page's `<html lang>` attribute accurate and add a corresponding page in both languages when creating new pages.
+
 ## Preview
 https://www.w3profile.com/zsuzsanna-benkoe -> Spaces (https://zsuzsanna-benko.w3spaces.com/)
 
