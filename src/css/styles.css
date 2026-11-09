@@ -1580,6 +1580,23 @@
     }
 
 
+
+    #study-section,
+    #W3SCHOOLS,
+    #data-analysis,
+    #programming,
+    #web-development,
+    #graphic-design {
+        scroll-margin-top: 50px;
+    }
+
+    #listec,
+    #ogl,
+    #harman {
+        scroll-margin-top: 50px;
+    }
+
+
 /* === FOOTER === */
 
     #footer {
