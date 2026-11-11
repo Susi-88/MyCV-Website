@@ -918,6 +918,7 @@
 
     /* --- DEVELEOPMENT --- */
     #job-section .job-development,
+    #job-section .job-skills,
     #study-section .study-development,
     #education-section .education-development,
     #education-section .education-development-VHB {
@@ -930,6 +931,7 @@
     }
 
     #job-section .job-development h4,
+    #job-section .job-skills h4,
     #study-section .study-development h4,
     #education-section .education-development h4,
     #education-section .education-development-VHB h4 {
@@ -946,6 +948,27 @@
         font-size: 0.9rem;
         line-height: 1.7;
     }
+
+    #job-section .job-skill-tag {
+        display: inline-block;
+        padding: 0.4rem 0.8rem;
+        margin: 0.4rem 0.5rem 0 0;
+        color: var(--light);
+        border-radius: 10px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        background-color: var(--dark);
+    }
+
+    #job-section .job-skills > div:first-of-type {
+        border-bottom: 1px solid var(--light);
+        padding-bottom: 2rem;
+    }
+
+    #job-section .job-skills > div:last-of-type {
+        padding-top: 1rem;
+    }
+
 
     /* --- EDUCATION CATEGORY --- */
 
