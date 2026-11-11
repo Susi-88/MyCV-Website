@@ -228,7 +228,7 @@ document.querySelectorAll(".education-toggle").forEach(button => {
             arrow.classList.remove("toggle-arrow-down");
             arrow.classList.add("toggle-arrow-up");
 
-            // Highlight the header in red
+            // Highlight the header with the site's primary accent color.
             const header = education.querySelector(".education-toggle");
             if (header) {
                 header.style.color = "var(--primaere)";
@@ -372,5 +372,5 @@ function showSlides(n, slideshowIndex) {
     dots[slideIndex[slideshowIndex] - 1].className += " active";
 
     // Use the selected thumbnail's alternative text as the visible caption.
-    captionText.innerHTML = dots[slideIndex[slideshowIndex] - 1].getAttribute("alt");
+    captionText.textContent = dots[slideIndex[slideshowIndex] - 1].getAttribute("alt");
 }
