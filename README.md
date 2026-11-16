@@ -16,6 +16,7 @@ The website provides an overview of:
 - Certifications and further education
 - Personal and professional competencies
 - Online profiles and contact information
+- Legal notice (Impressum)
 
 ## Technologies
 - **HTML:** Used for the structure of the website.

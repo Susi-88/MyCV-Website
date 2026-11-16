@@ -800,13 +800,15 @@
     /* --- JOB AND EDUCATION --- */
 
     #job-section .job-container,
-    #education-section .education-container {
+    #education-section .education-container,
+    #impressum-section .impressum-container {
         position: relative;
     }
 
     #job-section .job-container,
     #study-section .study-container,
-    #education-section .education-container {
+    #education-section .education-container,
+    #impressum-section .impressum-container  {
         margin-top: 6rem;
         margin-bottom: 3rem;
         padding-right: 1rem;
@@ -814,14 +816,16 @@
 
     #job-section .job-container:first-of-type,
     #study-section .study-container:first-of-type,
-    #education-section .education-container:first-of-type {
+    #education-section .education-container:first-of-type,
+    #impressum-section .impressum-container:first-of-type {
         margin-top: 3rem;
     }
 
         @media (min-width: 576px) {
             #job-section .job-container,
             #study-section .study-container,
-            #education-section .education-container {
+            #education-section .education-container,
+            #impressum-section .impressum-container  {
                 padding-right: 2rem;
             }
         }
@@ -829,14 +833,16 @@
         @media (min-width: 768px) {
             #job-section .job-container,
             #study-section .study-container,
-            #education-section .education-container {
+            #education-section .education-container,
+            #impressum-section .impressum-container  {
                 padding-right: 3rem;
             }
         }
 
     /* Add a horizontal line after each entry, except the last one. */
     #job-section .job-container::after,
-    #education-section .education-container::after {
+    #education-section .education-container::after,
+    #impressum-section .impressum-container::after {
         content: "";
         position: absolute;
         bottom: -5rem;
@@ -848,7 +854,8 @@
 
     /* Remove the horizontal line after the last entry. */
     #job-section .job-container:last-of-type::after,
-    #education-section .education-container:last-of-type::after {
+    #education-section .education-container:last-of-type::after,
+    #impressum-section .impressum-container:last-of-type::after {
         content: none;
     }
 
@@ -1620,6 +1627,24 @@
         scroll-margin-top: 3.125rem;
     }
 
+/* === LEGAL NOTICE / IMPRESSUM === */
+
+    #impressum-section #impressum-contact,
+    #impressum-section .impressum-container:last-of-type p {
+        padding-top: 3.5rem;
+    }
+
+        #impressum-section a:link,
+        #impressum-section a:visited,
+        #impressum-section a:active {
+            color: var(--light);
+            text-decoration: none;
+        }
+
+        #impressum-section a:hover{
+            color: var(--primaere);
+            cursor: pointer;
+        }
 
 /* === FOOTER === */
 
@@ -1651,3 +1676,12 @@
             text-decoration: underline var(--primaere) 0.2rem;
             text-underline-offset: 0.4rem;
         }
+
+        #footer #impressum-btn {
+            margin-top: 1.2rem;
+        }
+
+        #footer #impressum-btn a {
+            color: var(--primaere);
+        }
+
