@@ -17,6 +17,7 @@ The website provides an overview of:
 - Personal and professional competencies
 - Online profiles and contact information
 - Legal notice (Impressum)
+- Privacy policy (Datenschutzerklärung)
 
 ## Technologies
 - **HTML:** Used for the structure of the website.
@@ -31,6 +32,9 @@ https://www.w3profile.com/zsuzsanna-benkoe -> Spaces (https://zsuzsanna-benko.w3
 
 ## Purpose
 The purpose of this project is to create a digital version of my CV while also demonstrating my growing skills in web development, responsive design, and digital presentation.
+
+## Legal information
+This website includes a legal notice and a privacy policy. It is intended for professional presentation and job-seeking purposes and does not use cookies, tracking tools, analytics, or user registration.
 
 ## Author
 Zsuzsanna Benkö
