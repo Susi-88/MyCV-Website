@@ -462,14 +462,16 @@
             }
         }
 
-    #main-container .intro{
-    margin: 3rem 1rem 3rem 0;
+    #main-container .intro,
+    #main-container #profile-cta {
+    margin: 3rem 2rem 3rem 0;
     text-align: justify;
 }
 
     @media (min-width: 992px) {
-        #main-container .intro {
-            margin: 2rem 3rem 3rem 0;
+        #main-container .intro,
+        #main-container #profile-cta {
+            margin: 2rem 4rem 3rem 0;
         }
     }
 
@@ -513,7 +515,7 @@
     }
 
     #main-container p {
-        padding: 1.25rem 2.5rem 1.25rem 0;
+        padding: 0.5rem 0 0 0;
         text-align: justify;
     }
 
@@ -930,6 +932,7 @@
     }
 
     /* --- DEVELEOPMENT --- */
+    #profile #profile-cta,
     #job-section .job-development,
     #job-section .job-skills,
     #study-section .study-development,
@@ -943,6 +946,7 @@
         border-radius: 0.3rem;
     }
 
+    #profile #profile-cta h4,
     #job-section .job-development h4,
     #job-section .job-skills h4,
     #study-section .study-development h4,
@@ -952,6 +956,7 @@
         margin-bottom: 0.6rem;
     }
 
+    #profile #profile-cta p,
     #job-section .job-development p,
     #study-section .study-development p,
     #education-section .education-development p,
@@ -960,6 +965,10 @@
         padding: 0.7rem 0 0 0;
         font-size: 0.9rem;
         line-height: 1.7;
+    }
+
+    #profile #profile-cta li {
+        font-size: 0.9rem;
     }
 
     #job-section .job-skill-tag {
