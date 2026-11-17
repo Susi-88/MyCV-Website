@@ -871,12 +871,45 @@
 
     /* Reserve the photo's responsive footprint in the final entries. */
         @media (min-width: 768px) {
-            #job-section #harman {
-                padding-right: calc(26% + 3rem);
+            #job-section #harman .job-skills-soft {
+                padding-right: calc(20% + 3rem);
             }
 
             #education-section #VHB {
                 padding-right: calc(25% + 3rem);
+            }
+        }
+
+        @media (min-width: 1200px) {
+            #job-section #harman .job-skills-technical,
+            #job-section #harman .job-skills-soft {
+                padding-right: calc(20% + 3rem);
+            }
+        }
+
+        @media (min-width: 1456px) {
+            #job-section #harman .job-development p:nth-last-child(-n+2) {
+                padding-right: calc(20% + 3rem);
+            }
+        }
+
+        @media (min-width: 1900px) {
+            #job-section #harman .job-development p:nth-last-child(-n+3) {
+                padding-right: calc(20% + 3rem);
+            }
+            #job-section #harman .job-skills-soft {
+                padding-right: calc(24% + 3rem);
+            }
+        }
+
+        @media (min-width: 2080px) {
+            #job-section #harman .job-development,
+            #job-section #harman .job-skills-technical,
+            #job-section #harman .job-skills-soft {
+                padding-right: calc(24% + 3rem);
+            }
+            #job-section #harman .job-development p:nth-last-child(-n+3) {
+                padding-right: 0;
             }
         }
 
@@ -954,6 +987,7 @@
     #education-section .education-development-VHB h4 {
         color: var(--primaere);
         margin-bottom: 0.6rem;
+        font-size: 1.2rem;
     }
 
     #profile #profile-cta p,
@@ -963,12 +997,12 @@
     #education-section .education-development-VHB p {
         margin: 0;
         padding: 0.7rem 0 0 0;
-        font-size: 0.9rem;
+        font-size: 1rem;
         line-height: 1.7;
     }
 
     #profile #profile-cta li {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     #job-section .job-skill-tag {
@@ -977,7 +1011,7 @@
         margin: 0.4rem 0.5rem 0 0;
         color: var(--light);
         border-radius: 0.5rem;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         font-weight: 500;
         background-color: var(--dark);
     }
@@ -1212,7 +1246,7 @@
         border-radius: 0.25rem;
         color: inherit;
         text-decoration: none;
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         font-weight: 600;
         letter-spacing: 0.03125rem;
         transition:
